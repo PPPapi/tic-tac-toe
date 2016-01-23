@@ -4,7 +4,7 @@ Library           TicTacToeKeywords
 
 *** Keywords ***
 Check Location   [Arguments]   ${row}    ${col}    ${mark}
-    ${m}=   Get Mark    ${row}    ${col}
+    ${m}=   Fetch Mark    ${row}    ${col}
 	Should Be Equal    ${m}    ${mark}    
 
 Winner Should Be   [Arguments]       ${mark}

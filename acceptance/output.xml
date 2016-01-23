@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 2.9 (Jython 2.7.0 on java1.8.0_60)" generated="20160123 02:59:53.480">
+<suite source="C:\tic-tac-toe\acceptance\TicTacToeTests.txt" name="TicTacToeTests" id="s1">
+<test name="Win Diagonally as X" id="s1-t1">
+<kw name="Start New Game">
+<msg level="FAIL" timestamp="20160123 02:59:53.748">No keyword with name 'Start New Game' found.</msg>
+<status endtime="20160123 02:59:53.749" starttime="20160123 02:59:53.748" status="FAIL"></status>
+</kw>
+<status critical="yes" endtime="20160123 02:59:53.751" starttime="20160123 02:59:53.736" status="FAIL">No keyword with name 'Start New Game' found.</status>
+</test>
+<test name="Win Horizontally as O" id="s1-t2">
+<kw name="Start New Game">
+<msg level="FAIL" timestamp="20160123 02:59:53.763">No keyword with name 'Start New Game' found.</msg>
+<status endtime="20160123 02:59:53.763" starttime="20160123 02:59:53.762" status="FAIL"></status>
+</kw>
+<status critical="yes" endtime="20160123 02:59:53.764" starttime="20160123 02:59:53.753" status="FAIL">No keyword with name 'Start New Game' found.</status>
+</test>
+<test name="Force a Tie" id="s1-t3">
+<kw name="Start New Game">
+<msg level="FAIL" timestamp="20160123 02:59:53.776">No keyword with name 'Start New Game' found.</msg>
+<status endtime="20160123 02:59:53.776" starttime="20160123 02:59:53.775" status="FAIL"></status>
+</kw>
+<status critical="yes" endtime="20160123 02:59:53.778" starttime="20160123 02:59:53.766" status="FAIL">No keyword with name 'Start New Game' found.</status>
+</test>
+<status endtime="20160123 02:59:53.780" starttime="20160123 02:59:53.490" status="FAIL"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3">Critical Tests</stat>
+<stat pass="0" fail="3">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="3" name="TicTacToeTests" id="s1">TicTacToeTests</stat>
+</suite>
+</statistics>
+<errors>
+<msg level="ERROR" timestamp="20160123 02:59:53.731">Error in file 'C:\tic-tac-toe\acceptance\TicTacToeTests.txt': Importing test library 'TicTacToeKeywords' failed: ImportError: No module named TicTacToeKeywords
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\RobotFrameWork\Lib
+  C:\RobotFrameWork\robotframework-2.9.jar\Lib
+  __classpath__
+  __pyclasspath__/
+CLASSPATH:
+  C:\tic-tac-toe\build\libs\tic-tac-toe-1.0.jar
+  C:\RobotFrameWork\robotframework-2.9.jar</msg>
+</errors>
+</robot>
