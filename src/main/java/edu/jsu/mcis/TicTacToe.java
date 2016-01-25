@@ -1,11 +1,13 @@
 package edu.jsu.mcis;
 
+import java.util.Scanner;
+
 public class TicTacToe {
 
 public enum Mark {X, O, E};
 public Mark[][] gameBoard;
 public enum Result {XWIN, OWIN, TIE};
-private TicTacToe.Result endGameResult;
+private Result endGameResult;
 private int playerTurn;
 
 public TicTacToe(){
@@ -46,6 +48,17 @@ public Result getEndGameResult(){
 	return endGameResult;
 }
 
+public void printBoard(){
+    
+	for (int i = 0; i < 3; i++){
+            for (int j = 0; j < 3; j++) {
+                System.out.print(gameBoard[i][j] + " ");
+                
+            }
+            System.out.print("\n");
+        }
+}
+
 public Result winDecider() {
     if (((gameBoard[0][0] == Mark.X) && (gameBoard[0][1] == Mark.X) && (gameBoard[0][2] == Mark.X)) || ((gameBoard[1][0] == Mark.X) && (gameBoard[1][1] == Mark.X) && (gameBoard[1][2] == Mark.X)) || ((gameBoard[2][0] == Mark.X) && (gameBoard[2][1] == Mark.X) && (gameBoard[2][2] == Mark.X)) || ((gameBoard[0][0] == Mark.X) && (gameBoard[1][0] == Mark.X) && (gameBoard[2][0] == Mark.X)) || ((gameBoard[0][1] == Mark.X) && (gameBoard[1][1] == Mark.X) && (gameBoard[2][1] == Mark.X)) || ((gameBoard[0][2] == Mark.X) && (gameBoard[1][2] == Mark.X) && (gameBoard[2][2] == Mark.X)) || ((gameBoard[0][0] == Mark.X) && (gameBoard[1][1] == Mark.X) && (gameBoard[2][2] == Mark.X)) || ((gameBoard[2][0] == Mark.X) && (gameBoard[1][1] == Mark.X) && (gameBoard[0][2] == Mark.X))) {
                         endGameResult = Result.XWIN;
@@ -66,5 +79,24 @@ public Result winDecider() {
 
 	
 }
+public static void main(String[] args){
+	TicTacToe newGame = new TicTacToe();
+        while (newGame.endGameResult == null) {
+            Scanner row = new Scanner(System.in);
+            Scanner col = new Scanner(System.in);
+            
+            System.out.println("Player " + newGame.playerTurn + "'s turn");
+            System.out.println("Input desired row (Descending 1-3), press enter and then column (left to right 1-3) and press enter to mark a coordinate on the board.");
+            int pickedRow = row.nextInt();
+            int pickedCol = col.nextInt();
+            newGame.setMark(pickedRow, pickedCol);
+            newGame.printBoard();
+            System.out.println("\n");
+            newGame.winDecider();
+        }
+        System.out.println(newGame.endGameResult);
+}
+
+
 
 }
