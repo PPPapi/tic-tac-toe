@@ -1,5 +1,5 @@
 *** Settings ***
-Library           TicTacToeKeywords.jar
+Library           TicTacToeKeywords
 
 
 *** Keywords ***
