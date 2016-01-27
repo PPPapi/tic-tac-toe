@@ -1,5 +1,5 @@
 import edu.jsu.mcis.*;
-import mcis.jsu.edu.*;
+
 
 public class TicTacToeKeywords extends TicTacToe {
 	private TicTacToe newGame;
@@ -14,29 +14,32 @@ public class TicTacToeKeywords extends TicTacToe {
 	}
 	
 	public String fetchMark(int row, int col) {
-		if (newGame.getMark(row, col) == Mark.X) {
-			return "X";
+		String returnedMark = "";
+		if (newGame.getMark(row + 1, col + 1) == Mark.X) {
+			returnedMark = "X";
 		}
-		else if (newGame.getMark(row, col) == Mark.O) {
-			return "O";
+		else if (newGame.getMark(row + 1, col + 1) == Mark.O) {
+			returnedMark = "O";
 		}
-                else {
-                    return "POOP";
-                }
+		else {
+			returnedMark = "Oops";
+		}
+		return returnedMark;
+		
 	}
     
 	public String getWinner() {
+		String returnedWinState = "";
 		if (newGame.winDecider() == Result.XWIN) {
-			return "X";
+			returnedWinState = "X";
 		}
 		else if (newGame.winDecider() == Result.OWIN) {
-			return "O";
+			returnedWinState = "O";
 		}
 		else if (newGame.winDecider() == Result.TIE) {
-			return "TIE";
+			returnedWinState = "TIE";
 		}
-                else {
-                    return "poop";
-                }
+		return returnedWinState;
+                
 	}
 }
