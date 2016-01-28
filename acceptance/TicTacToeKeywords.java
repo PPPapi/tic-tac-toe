@@ -1,7 +1,7 @@
 import edu.jsu.mcis.*;
 
 
-public class TicTacToeKeywords extends TicTacToe {
+public class TicTacToeKeywords {
 	private TicTacToe newGame;
 	public void startNewGame() {
 		newGame = new TicTacToe();

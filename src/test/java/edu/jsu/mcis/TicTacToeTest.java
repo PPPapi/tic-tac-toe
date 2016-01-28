@@ -38,7 +38,7 @@ public class TicTacToeTest extends TicTacToe {
 	public void testGameIsNotOverAfterTheFirstMark() {
 		
 		TestTacToe.setMark(1, 1);
-		assertTrue(TestTacToe.getEndGameResult() == null);
+		assertTrue(TestTacToe.winDecider() == null);
 	}
 	
 	@Test
@@ -47,8 +47,8 @@ public class TicTacToeTest extends TicTacToe {
 		TestTacToe.gameBoard[0][1] = Mark.X;
 		
 		TestTacToe.setMark(1, 3);
-		TestTacToe.winDecider();
-		assertTrue(TestTacToe.getEndGameResult() == Result.XWIN);
+		
+		assertTrue(TestTacToe.winDecider() == Result.XWIN);
 	}
 	
 	@Test
@@ -62,8 +62,8 @@ public class TicTacToeTest extends TicTacToe {
 		TestTacToe.gameBoard[2][0] = Mark.O;
 		TestTacToe.gameBoard[2][1] = Mark.X;
 		TestTacToe.setMark(3, 3);
-		TestTacToe.winDecider();
 		
-		assertTrue(TestTacToe.getEndGameResult() == Result.TIE);
+		
+		assertTrue(TestTacToe.winDecider() == Result.TIE);
 	}	
 }
