@@ -77,6 +77,23 @@ public Result winDecider() {
 
 	
 }
+public static void main(String[] args){
+	TicTacToe newGame = new TicTacToe();
+        while (newGame.endGameResult == null) {
+            Scanner row = new Scanner(System.in);
+            Scanner col = new Scanner(System.in);
+            
+            System.out.println("Player " + newGame.playerTurn + "'s turn");
+            System.out.println("Input desired row (Descending 1-3), press enter and then column (left to right 1-3) and press enter to mark a coordinate on the board.");
+            int pickedRow = row.nextInt();
+            int pickedCol = col.nextInt();
+            newGame.setMark(pickedRow, pickedCol);
+            newGame.printBoard();
+            System.out.println("\n");
+            newGame.winDecider();
+        }
+        System.out.println(newGame.endGameResult);
+}
 
 
 
