@@ -17,22 +17,34 @@ public class TicTacToeGame extends JPanel implements ActionListener {
                 button[i][j] = new JButton();
                 button[i][j].setPreferredSize(new Dimension(100, 100));
                 button[i][j].addActionListener(this);
-                button[i][j].setName("Location " + i + " " + j);
+                button[i][j].setName("Location" + i +  j);
                 add(button[i][j]);
             }
         }
     }
-    private void checkForWin() {
+        private void checkForWin() {
         TicTacToe.Result result = model.winDecider();
+		final String s;
         if (result == TicTacToe.Result.XWIN) {
-            JOptionPane.showMessageDialog(this, "The Winner is X.", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+            s = "X";
         }
         else if (result == TicTacToe.Result.OWIN) {
-            JOptionPane.showMessageDialog(this, "The Winner is O.", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+            s = "O";
         }
         else if (result == TicTacToe.Result.TIE) {
-            JOptionPane.showMessageDialog(this, "The Game is Tied.", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+            s = "TIE";
         }
+		else {
+			s = "";
+		}
+		if (s.length() > 0) {
+			new Thread(new Runnable() {
+				public void run() {
+					JOptionPane.showMessageDialog(null, "The winner is " + s, "Game Over", JOptionPane.INFORMATION_MESSAGE);
+				}
+			}).start();
+                        
+		}
         
     }
     
@@ -52,10 +64,10 @@ public class TicTacToeGame extends JPanel implements ActionListener {
         JButton b = (JButton)event.getSource();
         String loc = b.getName().substring(8);
         
-        int r = Integer.parseInt(loc.substring(0, 1));
-        int c = Integer.parseInt(loc.substring(1, 2));
+        int r = Integer.parseInt(loc.substring(0, 1)) + 1;
+        int c = Integer.parseInt(loc.substring(1, 2)) + 1;
         
-        model.setMark(r, c);
+        model.setMark(r , c);
         TicTacToe.Mark m = model.getMark(r, c);
         if (m == TicTacToe.Mark.X) {
             b.setText("X");

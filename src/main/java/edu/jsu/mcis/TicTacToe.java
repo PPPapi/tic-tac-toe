@@ -77,7 +77,7 @@ public Result winDecider() {
 
 	
 }
-public static void main(String[] args){
+/*public static void main(String[] args){
 	TicTacToe newGame = new TicTacToe();
         while (newGame.endGameResult == null) {
             Scanner row = new Scanner(System.in);
@@ -93,7 +93,7 @@ public static void main(String[] args){
             newGame.winDecider();
         }
         System.out.println(newGame.endGameResult);
-}
+}*/
 
 
 
